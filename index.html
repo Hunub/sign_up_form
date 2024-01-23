@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script> 
     <title>Document</title>
     <style>
         body {
@@ -14,7 +15,7 @@
             margin-right: 10vw;
             margin-top: 10vh;
             margin-bottom: 10vh;
-            background-color: aqua;
+            border: 1px solid black;
         }
 
         .vertical_main {
@@ -29,7 +30,6 @@
             padding-left: 0;
             padding-right: 0;
             padding-bottom: 24px;
-            background-color: blanchedalmond;
         }
 
         #opening {
@@ -47,7 +47,7 @@
 
         form {
             height: 100%;
-            display: flex;
+
             flex-direction: column;
             
         }
@@ -59,17 +59,26 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content:left;
-            gap: 18px 24px;
+            gap: 24px 24px;
             padding: 0;
         }
 
         li {
             display: block;
             height: 96px;
+            width: 360px;
         }
 
+        li label {
+            margin-bottom: 0.6em;
+        }
+
+        li input {
+            width: 18em;
+            height: 1.8em;
+        }
         li p {
-            margin: 8px;
+            margin: 8px 0;
         }
 
         label {
@@ -80,6 +89,18 @@
             display: block;
         }
 
+        input:focus {
+            border: solid 2px black;
+        }
+
+        input:invalid {
+            border: solid 1px red;
+        }
+
+        #footer p {
+            margin-top: 5em;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -87,7 +108,8 @@
     <div class="vertical_main">
         <div class="main" id="opening">
             <p>
-                We need to use labels so that users understand what the data entered into an input field will represent. Just like that, we also need to let the backend, where we send our data, know what each piece of data represents.
+                
+By signing up, you affirm your agreement to comply with our terms and conditions. Users must be at least 18 years old. We prioritize privacy and handle personal data according to our privacy policy. Any breach of community guidelines may result in account suspension or termination. Thank you for choosing our platform.
             </p>
 
              <h3>Fill in the form below</h3>
@@ -103,25 +125,29 @@
                         <label for="l_name">LAST NAME</label><input type="text" id="l_name" name="l_name">
                     </li>
                     <li class="input_block">
-                        <label for="email">EMAIL</label><input type="text" id="email" name="email">
+                        <label for="email">EMAIL</label><input type="email" id="email" name="email">
                     </li>
                     <li class="input_block">
-                        <label for="phone">PHONE NUMBER</label><input type="text" id="phone" name="phone">
-                        <p>Please enter password</p>
+                        <label for="phone">PHONE NUMBER</label><input type="text" id="phone" name="phone" inputmode="numeric">
                     </li>
                     <li class="input_block">
-                        <label for="password">PASSWORD</label><input type="text" id="password" name="password">
-                        <p>Please enter password</p>
+                        <label for="password">PASSWORD</label><input type="password" id="password" name="password">
+                        
                     </li>
                     <li class="input_block">
-                        <label for="password_confirm">CONFIRM PASSOWRD</label><input type="text" id="password_confirm">
+                        <label for="password_confirm">CONFIRM PASSOWRD</label><input type="password" id="password_confirm">
+                        <p id="password_error"></p>
                     </li>
                 </ul>
-                <div class="main" id="submit"></div>
+                <div class="main" id="submit">
+                    <button type="submit" id="submit_button">SIGN UP</button>
+                </div>
             </form>
         </div>
         
-        <div class="main" id="footer"></div>
+        <div class="main" id="footer">
+            <p>Already have an account? <a href="#">Log in</a> </p>
+        </div>
         
         
     </div>
