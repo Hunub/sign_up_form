@@ -1,0 +1,132 @@
+body {
+    box-sizing: border-box;
+    width: 100vw;
+    background-image: url(image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Playfair Display', serif;
+}
+.vertical_main  {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 60px 40px;
+    height: auto;
+    margin-left: 40vw;
+    margin-right: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: rgb(255, 253, 250);
+    box-shadow: 8px 8px 16px rgba(58, 59, 59, 0.24);
+}
+
+
+.main {
+    padding-top:0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 24px;
+}
+
+#opening {
+    flex: 4 5 200px;
+}
+
+#opening p {
+    margin-bottom: 80px;
+}
+
+#form {
+    flex: 5 5 400px;
+}
+
+#footer {
+    flex: 1 1 100px;
+}
+
+
+form {
+    height: 100%;
+
+    flex-direction: column;
+    
+}
+
+ul {
+    flex: 1 0 400pxs;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:left;
+    gap: 24px 24px;
+    padding: 0;
+}
+
+li {
+    display: block;
+    height: 96px;
+    width: 360px;
+}
+
+li label {
+    margin-bottom: 0.6em;
+}
+
+li p {
+    margin: 8px 0;
+}
+
+:placeholder-shown {
+    font-family: 'Playfair Display', serif;
+}
+
+input {
+    display: inline-block;
+    width: 18em;
+    height: 1.8em;
+    border: solid 1px rgb(87, 73, 158);
+    border-radius: 0.5em;
+}
+
+
+input:focus {
+    outline: none !important;
+    border: solid 3px rgb(29, 63, 255);
+    box-shadow: 0 0 5px rgba(65, 125, 255);
+}
+
+li>input:focus:valid {
+    border: solid 1px rgb(30, 134, 253);
+    background-color: rgb(193, 255, 224);
+}
+
+
+
+input:invalid {
+    border: solid 3px rgb(255, 71, 71);
+}
+
+input:valid {
+    border: solid 3px rgb(39, 145, 245);
+}
+
+input:placeholder-shown {
+    border: solid 1px black;
+}
+
+
+button {
+    width: 12em;
+    height: 2.4em;
+}
+
+#footer p {
+    margin-top: 5em;
+    margin-bottom: 0;
+}
+
+#footer a {
+    color: rgb(57, 102, 185);
+    text-decoration: none;
+}

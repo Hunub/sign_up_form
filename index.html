@@ -5,103 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script> 
     <title>Document</title>
-    <style>
-        body {
-            width: 100vw;
-        }
-        .vertical_main  {
-            height: auto;
-            margin-left: 40vw;
-            margin-right: 10vw;
-            margin-top: 10vh;
-            margin-bottom: 10vh;
-            border: 1px solid black;
-        }
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-        .vertical_main {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            padding: 20px 60px;
-        }
-
-        .main {
-            padding-top:0;
-            padding-left: 0;
-            padding-right: 0;
-            padding-bottom: 24px;
-        }
-
-        #opening {
-            flex: 4 5 200px;
-        }
-
-        #form {
-            flex: 5 5 400px;
-        }
-
-        #footer {
-            flex: 1 1 100px;
-        }
-
-
-        form {
-            height: 100%;
-
-            flex-direction: column;
-            
-        }
-
-        ul {
-            flex: 1 0 400pxs;
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content:left;
-            gap: 24px 24px;
-            padding: 0;
-        }
-
-        li {
-            display: block;
-            height: 96px;
-            width: 360px;
-        }
-
-        li label {
-            margin-bottom: 0.6em;
-        }
-
-        li input {
-            width: 18em;
-            height: 1.8em;
-        }
-        li p {
-            margin: 8px 0;
-        }
-
-        label {
-            display: block;
-        }
-
-        input {
-            display: block;
-        }
-
-        input:focus {
-            border: solid 2px black;
-        }
-
-        input:invalid {
-            border: solid 1px red;
-        }
-
-        #footer p {
-            margin-top: 5em;
-            margin-bottom: 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -119,23 +27,23 @@ By signing up, you affirm your agreement to comply with our terms and conditions
             <form action="">
                 <ul>
                     <li class="input_block">
-                        <label for="f_name">FIRST NAME</label><input type="text" id="f_name" name="f_name">
+                        <input type="text" id="f_name" name="f_name" required minlength="1" placeholder="Your first name *">
                     </li>
                     <li class="input_block">
-                        <label for="l_name">LAST NAME</label><input type="text" id="l_name" name="l_name">
+                        <input type="text" id="l_name" name="l_name" required placeholder="Your last name *">
                     </li>
                     <li class="input_block">
-                        <label for="email">EMAIL</label><input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required placeholder="Your e-mail address *">
                     </li>
                     <li class="input_block">
-                        <label for="phone">PHONE NUMBER</label><input type="text" id="phone" name="phone" inputmode="numeric">
+                        <input type="text" id="phone" name="phone" inputmode="numeric" placeholder="Your phone number *">
                     </li>
                     <li class="input_block">
-                        <label for="password">PASSWORD</label><input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" required minlength="8" placeholder="Your password *" pattern="\d{8,20}">
                         
                     </li>
                     <li class="input_block">
-                        <label for="password_confirm">CONFIRM PASSOWRD</label><input type="password" id="password_confirm">
+                        <input type="password" id="password_confirm" required minlength="8" placeholder="Confirm your password *"> 
                         <p id="password_error"></p>
                     </li>
                 </ul>
@@ -146,7 +54,7 @@ By signing up, you affirm your agreement to comply with our terms and conditions
         </div>
         
         <div class="main" id="footer">
-            <p>Already have an account? <a href="#">Log in</a> </p>
+            <p>Already have an account? <a href="#" id="log_in">Log in</a> </p>
         </div>
         
         

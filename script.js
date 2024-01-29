@@ -3,20 +3,30 @@ const passwordConf = document.getElementById("password_confirm");
 const passwordMessage = document.getElementById('password_error');
 const submit = document.querySelector('button');
 const inputs = document.querySelectorAll("input");
+const form = document.querySelector("form")
 
-console.log("Hello");
-passwordConf.addEventListener("focusout",(event)=>{
-    
+function checkPassword(){
     if (passwordConf.value !== passwordInit.value){
+        passwordConf.setCustomValidity("Invalid field.");
         passwordMessage.innerText = "Please enter the same password";
     } else {
         passwordMessage.innerText = "";
+        passwordConf.setCustomValidity("");
+    }
+};
+
+
+passwordConf.addEventListener("input",checkPassword);
+passwordInit.addEventListener("focusout",checkPassword);
+
+
+form.addEventListener("submit",(event)=>{
+    if (passwordConf.value !== passwordInit.value){
+        event.preventDefault();
     }
 });
 
-submit.addEventListener("click",()=>{
-    for(let i=0; i<inputs.length; i++){
-        inputs[i].setAttribute("required","");
-    }
-});
+
+
+
 
